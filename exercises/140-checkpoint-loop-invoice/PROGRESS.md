@@ -1,64 +1,45 @@
-# PROGRESS.md — Invoice story (RocketNouilles)
+# PROGRESS.md — Invoices (RocketNouilles)
 
 > Owned by the orchestrator (main session). Subagents read it, never write it.
-> Update it after every step: implementer report, checks, reviewer verdict, human gate.
+> Updated after every step: plan, implementer report, checks, reviewer verdict, human gate.
 
-## Story
+## Goal
 
-As a participant, I can download a PDF invoice for my own paid order, and once the table is closed,
-anyone at the table can download a group invoice for the whole table.
+The feature brief is in `loop-prompt.md`. Done when: every checkpoint is `accepted`; `npm test`,
+`npm run typecheck`, `npm run build`, `npm run e2e` pass; both invoices were tried by the human on a local node;
+`git diff --stat origin/day-2 -- server/src/promo` is empty.
 
-Story acceptance (checked at the end, on the whole story):
-- [ ] `npm test`, `npm run typecheck`, `npm run build`, `npm run e2e` pass
-- [ ] Individual invoice PDF: valid PDF, totals match the order (checked with `pdftotext`)
-- [ ] Group invoice PDF: only after close, totals match the sum of the orders
-- [ ] Both downloads work from the UI (checked in a browser)
-- [ ] Promo engine untouched (`git diff --stat server/src/promo` is empty)
+Limits: max 2 fix rounds per checkpoint, then escalate to the human.
 
-## Assumptions (decided by the human, not by the agents)
+## Plan
 
-- Prices in `menu.json` are TTC (VAT included).
-- One VAT rate: 10 % for food AND for soft drinks served (restaurant sale, on-site/takeaway). No alcohol on the menu.
-- The invoice renders whatever the order says (pricing frozen at payment). The promo engine is out of scope.
-- <add yours>
+Filled by the orchestrator in Phase 1. Approved by the human: **no**
 
-## Loop limits
+| # | Outcome | Likely files | Acceptance check | Human gate | Status | Rounds |
+|---|---|---|---|---|---|---|
+| CP1 | | | | | todo | 0 |
 
-- Max fix rounds per checkpoint: 2 (then escalate to the human)
-- Human gate after: CP2, CP3, CP4, CP5 (<adjust>)
+Status: `todo` → `implementing` → `in review` → `fixing` → `awaiting human` → `accepted` (or `escalated`).
 
-## Checkpoints
+## Decisions
 
-| # | Outcome | Status | Rounds | Human gate |
-|---|---|---|---|---|
-| CP1 | Invoice data + per-node numbering | todo | 0 | — |
-| CP2 | VAT and totals computation (pure, tested) | todo | 0 | todo |
-| CP3 | Individual invoice PDF endpoint | todo | 0 | todo |
-| CP4 | "Download my invoice" button in the UI | todo | 0 | todo |
-| CP5 | Group invoice after close (API + UI + e2e) | todo | 0 | todo |
+Assumptions made by the orchestrator, answers given by the human.
 
-Status values: `todo` → `implementing` → `in review` → `fixing` → `awaiting human` → `accepted` (or `escalated`).
+- (none yet)
 
-## Current checkpoint: CPn
+## Open findings
 
-Criteria:
-- [ ] ...
-
-Evidence (commands actually run by the orchestrator, with the key result):
-- `npm test` → ...
-
-Blocking findings:
+Blocking:
 - (none)
 
-Non-blocking findings (kept for later / out of scope):
+Non-blocking (carried into later briefs when relevant, or out of scope):
 - (none)
 
 ## Log
 
-| Step | Checkpoint | Who | Result |
+| # | Checkpoint | Who | Result / evidence |
 |---|---|---|---|
-| 1 | CP1 | implementer | ... |
 
 ## Next step
 
-<one line: what the orchestrator does next>
+Phase 1: explore the code and fill the Plan, then stop for approval.
