@@ -1,53 +1,31 @@
-# Contract checker skill eval — starter
+# Contract checker skill eval
 
-Exercise 2 (Contract Checker Skill Eval), reused in Exercise 4a. The instructions are on the slides.
+Exercise 2 (reused in Exercise 4a).
 
-You do not code a harness. You write **one prompt**, `/eval-skill`, that makes Claude Code run the eval of
-`.claude/skills/issue-contract-checker/`: headless `claude -p` runs on fixed cases, one git worktree per run,
-WITH vs WITHOUT the skill, graded against ground truth you write first.
+## Goal
 
-| File | What to do |
-| --- | --- |
-| `cases.json` | 5 `main` cases and 5 `hard` cases. Fill every `expected` that is `null` **before the first run** |
-| `prompt-template.md` | skeleton of the eval prompt; copy it to `.claude/skills/eval-skill/SKILL.md` and write it |
-| `results/` | written by `/eval-skill` (gitignored): `<run-id>/summary.md`, `summary.json`, `transcripts/` |
+Find out whether the `issue-contract-checker` skill actually helps. Don't trust your gut: have Claude measure it.
 
-## Case format
+## Task
 
-```jsonc
-{
-  "id": "example-web-severity",       // an example, not one of the cases
-  "set": "main",                       // main | hard
-  "prompt": "Is the contract in sync?",// what the agent under test receives
-  "ask_verdict": true,                 // append verdict_instructions (the CONTRACT_VERDICT line) to the prompt
-  "should_activate": true,             // should the skill load for this prompt?
-  "mutations": [                       // literal find/replace in the fixture, every occurrence, must match
-    { "file": "apps/web/src/domain/entities/Issue.ts", "find": "'CRITICAL'", "replace": "'URGENT'" }
-  ],
-  "expected": {                        // ground truth: you fill it
-    "checker_exit": 1,                 // exit code of check-contract.mjs on the fixture (0 aligned, 1 drift)
-    "aligned": false,
-    "drift": [
-      { "enum": "IssueSeverity",
-        "files": [["apps/web/src/domain/entities/Issue.ts"]],  // acceptable file sets (one or more)
-        "values": ["CRITICAL", "URGENT"] }                     // missing + extra values, as a set
-    ]
-  }
-}
-```
+Ask Claude Code to evaluate the skill in `.claude/skills/issue-contract-checker/`. Write the prompt yourself.
+There is no harness, no case file and no template.
 
-Unrelated cases (`should_activate: false`) expect no verdict line and an answer that mentions `must_mention`.
+Think about what you want to know, then say it:
 
-## Run
+- what to compare (the agent with the skill vs without it)
+- how to know the right answer (break an enum on purpose, so you know the drift in advance)
+- what to measure (is the drift found? how many tool calls and tokens?)
+- what the agent under test must not be allowed to see or change
 
-```bash
-unset ANTHROPIC_API_KEY                 # runs use your Claude Code login
-claude                                  # from the repo root
-> /eval-skill conditions=with,without repeats=1
-```
+Read the report and decide if the skill is worth keeping.
 
-Headless (CI, scripts): `claude -p "/eval-skill conditions=with,without repeats=1"`. Without anyone to answer
-permission prompts, the tools the eval needs must be pre-approved in the `allowed-tools` of your prompt.
+## Success criteria
 
-Every run starts from the committed `HEAD`, without the `exercises/` folder: uncommitted work is not part
-of the fixtures. Afterwards `git worktree list` must show only your own checkouts.
+- The right answer is known before the agent runs, not taken from the agent's own claims.
+- WITH and WITHOUT the skill are compared on the same broken fixture.
+- Your repo is left clean: no stray worktrees (`git worktree list`), no edits to the skill.
+
+## Bonus
+
+Check that the skill stays quiet on a question that has nothing to do with enum drift.
