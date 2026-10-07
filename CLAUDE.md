@@ -7,7 +7,8 @@ violations, comments). npm workspaces, Node >= 22.
 - `apps/web`: React 19 + Vite viewer; reads issues from the API (proxied `/issues` -> `localhost:3001`).
 - `contracts/openapi.yaml`: the API contract and source of truth for the issue model.
 - `rocketnouilles/`: a separate, standalone app reviewed by Smart4Qube (project id `rocketnouilles`).
-  It has its own tooling; it is not part of the npm workspaces. Do not change it while working on Smart4Qube.
+  It has its own tooling and is not part of the npm workspaces. Keep Smart4Qube changes and RocketNouilles
+  changes separate; for RocketNouilles tasks, follow `rocketnouilles/CLAUDE.md` and run its commands from there.
 
 ## Commands (run from the repo root)
 
