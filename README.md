@@ -17,14 +17,38 @@ Then open http://localhost:5173.
 
 ## Stub coverage
 
-`apps/api` is a stub implementation of `contracts/openapi.yaml`. Only the two
-read operations are implemented; every write operation returns `501` with
-`NOT_IMPLEMENTED`.
+`apps/api` implements every operation of `contracts/openapi.yaml` against an
+in-memory store initialised from `apps/api/src/seed.ts`. Writes are visible to
+subsequent reads and are lost when the server restarts.
 
 | Operation | Path | Stub behavior |
 |---|---|---|
-| `listIssues` | `GET /issues/{projectId}` | Implemented |
+| `listIssues` | `GET /issues/{projectId}` | Implemented (`file`, `type`, `severity`, `status` filters) |
 | `getIssue` | `GET /issues/{projectId}/{issueId}` | Implemented |
-| `createIssue` | `POST /issues/{projectId}` | `501 NOT_IMPLEMENTED` |
-| `updateIssue` | `PUT /issues/{projectId}/{issueId}` | `501 NOT_IMPLEMENTED` |
-| `deleteIssue` | `DELETE /issues/{projectId}/{issueId}` | `501 NOT_IMPLEMENTED` |
+| `createIssue` | `POST /issues/{projectId}` | Implemented (`201` + `Location`) |
+| `updateIssue` | `PUT /issues/{projectId}/{issueId}` | Implemented (partial update) |
+| `deleteIssue` | `DELETE /issues/{projectId}/{issueId}` | Implemented (`204`) |
+
+Known projects: `acme-payments`, `legacy-billing` (sample repositories in
+`apps/web/fixtures/repos/`) and `rocketnouilles` (the standalone app in
+`rocketnouilles/`, seeded with no issues).
+
+## Managing issues from the command line
+
+With the API running:
+
+```
+npm run issues:add -- rocketnouilles scripts/examples/vulnerability.json
+npm run issues:list -- rocketnouilles "status=OPEN"
+npm run issues:remove -- rocketnouilles iss-020
+```
+
+## Contract check
+
+```
+npm run contract:check
+```
+
+Compares the issue enums in `contracts/openapi.yaml`, `apps/api/src/types.ts`
+and `apps/web/src/domain/entities/Issue.ts` (see
+`.claude/skills/issue-contract-checker/`).

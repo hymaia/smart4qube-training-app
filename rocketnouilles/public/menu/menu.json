@@ -1,0 +1,1460 @@
+{
+  "restaurant": {
+    "name": "Happy Nouilles",
+    "address": "95 Rue Beaubourg, 75003 Paris",
+    "phone": "+33 1 44 59 31 22",
+    "website": null,
+    "sources": [
+      "Uber Eats store page 'Happy Nouilles' (PDF export supplied by the trainer, 2026-10-07)"
+    ],
+    "retrievedAt": "2026-10-07",
+    "photo": "photos/restaurant.jpg"
+  },
+  "currency": "EUR",
+  "allergensDisclaimer": "Allergens are inferred from dish descriptions for training purposes only. Always confirm with the restaurant.",
+  "notes": "Prices are Uber Eats delivery prices as of 2026-10-07; dine-in/takeaway prices may differ.",
+  "categories": [
+    {
+      "id": "entrees",
+      "name": "Entrées",
+      "items": [
+        {
+          "id": "raviolis-grilles",
+          "name": "Raviolis grillés",
+          "nameZh": "锅贴",
+          "description": "Raviolis grillés à la poêle, sauce à part.",
+          "priceCents": 660,
+          "photo": "photos/raviolis-grilles.jpg",
+          "tags": [
+            "dumplings"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ]
+        },
+        {
+          "id": "raviolis-pekinois-porc",
+          "name": "Raviolis pékinois porc",
+          "nameZh": "饺子",
+          "description": "Raviolis pékinois farcis au porc, pâte plissée, format bouchées.",
+          "priceCents": 910,
+          "photo": "photos/raviolis-pekinois-porc.jpg",
+          "tags": [
+            "dumplings"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ]
+        },
+        {
+          "id": "nems-porc",
+          "name": "Nêms au porc",
+          "nameZh": "猪春",
+          "description": "Rouleaux croustillants au porc haché.",
+          "priceCents": 700,
+          "photo": "photos/nems-porc.jpg",
+          "tags": [
+            "fried"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ]
+        },
+        {
+          "id": "nems-poulet",
+          "name": "Nêms au poulet",
+          "nameZh": "鸡春",
+          "description": "Nems croustillants garnis de poulet.",
+          "priceCents": 700,
+          "photo": "photos/nems-poulet.jpg",
+          "tags": [
+            "fried"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ]
+        },
+        {
+          "id": "crevettes-croustillantes",
+          "name": "Crevettes croustillantes",
+          "nameZh": "酥虾",
+          "description": "Queues de crevettes panées, dorées et croustillantes.",
+          "priceCents": 800,
+          "photo": "photos/crevettes-croustillantes.jpg",
+          "tags": [
+            "fried"
+          ],
+          "allergens": [
+            "gluten",
+            "shellfish",
+            "egg"
+          ]
+        },
+        {
+          "id": "raviolis-crevettes-frits",
+          "name": "Raviolis de crevettes (4 pièces)",
+          "nameZh": "炸虾",
+          "description": "Raviolis frits farcis à la crevette (4 pièces).",
+          "priceCents": 780,
+          "photo": "photos/raviolis-crevettes-frits.jpg",
+          "tags": [
+            "dumplings",
+            "fried"
+          ],
+          "allergens": [
+            "gluten",
+            "shellfish",
+            "soy"
+          ]
+        },
+        {
+          "id": "meduse-concombre",
+          "name": "Méduse au concombre",
+          "nameZh": "海蜇",
+          "description": "Lamelles de méduse avec concombre en julienne, carotte et ciboule.",
+          "priceCents": 960,
+          "photo": "photos/meduse-concombre.jpg",
+          "tags": [
+            "cold"
+          ],
+          "allergens": [
+            "soy",
+            "sesame"
+          ]
+        },
+        {
+          "id": "salade-poulet",
+          "name": "Salade de poulet",
+          "nameZh": "开胃凉拌鸡",
+          "description": "Poulet froid émincé en salade, avec concombre et champignons noirs, nappé d'une sauce aromatique.",
+          "priceCents": 1080,
+          "photo": "photos/salade-poulet.jpg",
+          "tags": [
+            "cold"
+          ],
+          "allergens": [
+            "soy",
+            "sesame"
+          ]
+        },
+        {
+          "id": "boeuf-ail-froid",
+          "name": "Bœuf à l'ail \"froid\"",
+          "nameZh": "冷拌牛",
+          "description": "Tranches de bœuf servies froides, à l'ail, avec coriandre.",
+          "priceCents": 1150,
+          "photo": "photos/boeuf-ail-froid.jpg",
+          "tags": [
+            "cold"
+          ],
+          "allergens": [
+            "soy"
+          ]
+        },
+        {
+          "id": "algues",
+          "name": "Algues",
+          "nameZh": "海带",
+          "description": "Salade d'algues (kelp) en fines lamelles, parsemée de graines de sésame.",
+          "priceCents": 810,
+          "photo": "photos/algues.jpg",
+          "tags": [
+            "cold",
+            "vegetarian"
+          ],
+          "allergens": [
+            "sesame",
+            "soy"
+          ]
+        },
+        {
+          "id": "concombre-froid",
+          "name": "Concombre froid assaisonné",
+          "nameZh": "冷拌黄瓜",
+          "description": "Concombre froid assaisonné, flocons de piment et sauce légère.",
+          "priceCents": 780,
+          "photo": "photos/concombre-froid.jpg",
+          "tags": [
+            "cold",
+            "vegetarian",
+            "spicy"
+          ],
+          "allergens": [
+            "soy"
+          ]
+        },
+        {
+          "id": "raviolis-pekinois-boeuf-piquant",
+          "name": "Raviolis pékinois bœuf piquant (10 pièces)",
+          "nameZh": "牛饺",
+          "description": "Raviolis pékinois farcis au bœuf pimenté, pâte plissée, format bouchées. 10 pièces.",
+          "priceCents": 1180,
+          "photo": "photos/raviolis-pekinois-boeuf-piquant.jpg",
+          "tags": [
+            "dumplings",
+            "spicy"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ]
+        },
+        {
+          "id": "raviolis-porc-sauce-pimentee",
+          "name": "Raviolis de porc à la sauce pimentée (cacahuètes, 10 pièces)",
+          "nameZh": "麻饺",
+          "description": "10 raviolis farcis au porc, servis dans une sauce pimentée et parsemés de cacahuètes concassées.",
+          "priceCents": 1180,
+          "photo": "photos/raviolis-porc-sauce-pimentee.jpg",
+          "tags": [
+            "dumplings",
+            "spicy"
+          ],
+          "allergens": [
+            "gluten",
+            "soy",
+            "peanut"
+          ]
+        },
+        {
+          "id": "champignons-noirs",
+          "name": "Champignons noirs",
+          "nameZh": "木耳",
+          "description": "Champignons noirs en salade, assaisonnés de piment et d'huile, garnis de coriandre.",
+          "priceCents": 780,
+          "photo": "photos/champignons-noirs.jpg",
+          "tags": [
+            "cold",
+            "vegetarian",
+            "spicy"
+          ],
+          "allergens": [
+            "soy"
+          ]
+        },
+        {
+          "id": "raviolis-pekinois-vegetarien",
+          "name": "Raviolis pékinois végétarien",
+          "nameZh": "素饺子",
+          "description": "Raviolis pékinois végétariens, bouchées garnies d'une farce végétale.",
+          "priceCents": 910,
+          "photo": null,
+          "tags": [
+            "dumplings",
+            "vegetarian"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fraicheur-ete",
+      "name": "Fraîcheur de l'été",
+      "items": [
+        {
+          "id": "salade-poulet-croustillant",
+          "name": "Salade au poulet croustillant",
+          "nameZh": "炸鸡沙拉",
+          "description": "Salade verte et roquette, oignon rouge, poulet croustillant pané, parsemé de graines de sésame.",
+          "priceCents": 1080,
+          "photo": "photos/salade-poulet-croustillant.jpg",
+          "tags": [
+            "cold",
+            "fried"
+          ],
+          "allergens": [
+            "gluten",
+            "sesame",
+            "egg"
+          ]
+        },
+        {
+          "id": "nouilles-froides-crevettes-croustillantes",
+          "name": "Nouilles froides aux crevettes croustillantes",
+          "nameZh": "酥虾冷面汤",
+          "description": "Nouilles froides en bouillon clair, garnies de crevettes croustillantes, concombre, carotte et coriandre.",
+          "priceCents": 1300,
+          "photo": "photos/nouilles-froides-crevettes-croustillantes.jpg",
+          "tags": [
+            "noodles",
+            "cold"
+          ],
+          "allergens": [
+            "gluten",
+            "shellfish",
+            "soy"
+          ]
+        },
+        {
+          "id": "nouilles-froides-poulet-croustillant",
+          "name": "Nouilles froides au poulet croustillant",
+          "nameZh": "炸鸡冷面",
+          "description": "Nouilles froides garnies de poulet croustillant, concombre, carotte et coriandre.",
+          "priceCents": 1300,
+          "photo": "photos/nouilles-froides-poulet-croustillant.jpg",
+          "tags": [
+            "noodles",
+            "cold"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ]
+        },
+        {
+          "id": "tagliatelles-froides-boeuf-pimente",
+          "name": "Tagliatelles froides au bœuf sauté pimenté",
+          "nameZh": "牛肉宽面",
+          "description": "Tagliatelles froides avec bœuf sauté pimenté, oignons et coriandre.",
+          "priceCents": 1230,
+          "photo": "photos/tagliatelles-froides-boeuf-pimente.jpg",
+          "tags": [
+            "noodles",
+            "cold",
+            "spicy"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nouilles-froides-boeuf-pimente",
+          "name": "Nouilles froides au bœuf pimenté",
+          "nameZh": "牛肉冷面",
+          "description": "Nouilles servies froides, bœuf tranché et huile pimentée, avec concombre, carotte et coriandre.",
+          "priceCents": 1200,
+          "photo": "photos/nouilles-froides-boeuf-pimente.jpg",
+          "tags": [
+            "noodles",
+            "cold",
+            "spicy"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nouilles-riz-sautes",
+      "name": "Nouilles et riz sautés",
+      "items": [
+        {
+          "id": "lamen-saute-poulet-croustillant",
+          "name": "Lamen sauté au poulet croustillant",
+          "nameZh": "拉炒炸鸡",
+          "description": "Nouilles lamen sautées garnies de poulet croustillant frit, accompagnées d'une sauce.",
+          "priceCents": 1500,
+          "photo": "photos/lamen-saute-poulet-croustillant.jpg",
+          "tags": [
+            "noodles",
+            "stir-fried"
+          ],
+          "allergens": [
+            "gluten",
+            "soy",
+            "egg"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-saute-boeuf",
+          "name": "Lamen sauté au bœuf",
+          "nameZh": "拉炒牛",
+          "description": "Nouilles lamen sautées au bœuf avec germes de soja, oignons et carottes.",
+          "priceCents": 1350,
+          "photo": "photos/lamen-saute-boeuf.jpg",
+          "tags": [
+            "noodles",
+            "stir-fried"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tagliatelles-sautees-poulet",
+          "name": "Tagliatelles maison sautées au poulet",
+          "nameZh": "宽炒鸡",
+          "description": "Larges tagliatelles maison sautées au poulet, agrémentées de pak choï, carottes et oignons.",
+          "priceCents": 1350,
+          "photo": "photos/tagliatelles-sautees-poulet.jpg",
+          "tags": [
+            "noodles",
+            "stir-fried"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "filament-ble-porc-seche",
+          "name": "Filament de blé sauté au porc séché",
+          "nameZh": "刀炒腊",
+          "description": "Filaments de blé sautés au porc séché, avec oignon, carotte et ciboule.",
+          "priceCents": 1350,
+          "photo": "photos/filament-ble-porc-seche.jpg",
+          "tags": [
+            "noodles",
+            "stir-fried"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-saute-porc-hache",
+          "name": "Lamen sauté au porc haché",
+          "nameZh": "拉炒炸酱",
+          "description": "Nouilles lamen sautées au porc haché, oignons verts et germes de soja.",
+          "priceCents": 1350,
+          "photo": "photos/lamen-saute-porc-hache.jpg",
+          "tags": [
+            "noodles",
+            "stir-fried"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-saute-legumes",
+          "name": "Lamen sauté aux légumes",
+          "nameZh": "拉炒菜",
+          "description": "Lamens sautés avec pak choi, chou, carottes et oignons verts.",
+          "priceCents": 1350,
+          "photo": "photos/lamen-saute-legumes.jpg",
+          "tags": [
+            "noodles",
+            "stir-fried",
+            "vegetarian"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-saute-crevettes",
+          "name": "Lamen sauté aux crevettes",
+          "nameZh": "拉炒虾",
+          "description": "Nouilles lamen sautées aux crevettes avec oignon, carotte et ciboule.",
+          "priceCents": 1350,
+          "photo": "photos/lamen-saute-crevettes.jpg",
+          "tags": [
+            "noodles",
+            "stir-fried"
+          ],
+          "allergens": [
+            "gluten",
+            "soy",
+            "shellfish"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-saute-porc-epice",
+          "name": "Lamen sauté aux tranches de porc épicées",
+          "nameZh": "拉炒水煮",
+          "description": "Nouilles lamen sautées aux tranches de porc épicées, oignons verts.",
+          "priceCents": 1500,
+          "photo": "photos/lamen-saute-porc-epice.jpg",
+          "tags": [
+            "noodles",
+            "stir-fried",
+            "spicy"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bo-bun",
+          "name": "Bô bun",
+          "nameZh": null,
+          "description": "Bol de vermicelles de riz avec bœuf, nems tranchés, salade, concombre, carotte, herbes et cacahuètes.",
+          "priceCents": 1150,
+          "photo": "photos/bo-bun.jpg",
+          "tags": [
+            "noodles"
+          ],
+          "allergens": [
+            "gluten",
+            "soy",
+            "peanut",
+            "fish"
+          ]
+        },
+        {
+          "id": "riz-saute-ananas-poulet",
+          "name": "Riz sauté ananas au poulet croustillant",
+          "nameZh": "炸鸡炒饭",
+          "description": "Riz sauté aux œufs avec dés d'ananas et petits pois, servi avec filets de poulet pané croustillant.",
+          "priceCents": 1400,
+          "photo": "photos/riz-saute-ananas-poulet.jpg",
+          "tags": [
+            "rice",
+            "fried"
+          ],
+          "allergens": [
+            "gluten",
+            "egg",
+            "soy"
+          ]
+        },
+        {
+          "id": "poulet-curry-rouge",
+          "name": "Poulet au curry rouge (pimenté)",
+          "nameZh": "红咖喱鸡饭",
+          "description": "Poulet pané croustillant nappé de curry rouge pimenté, servi avec riz blanc.",
+          "priceCents": 1200,
+          "photo": "photos/poulet-curry-rouge.jpg",
+          "tags": [
+            "rice",
+            "spicy"
+          ],
+          "allergens": [
+            "gluten",
+            "egg",
+            "soy"
+          ]
+        },
+        {
+          "id": "trio-poulet-frites-salade",
+          "name": "Trio (poulet, frites, salade)",
+          "nameZh": "鸡排三重奏",
+          "description": "Escalope de poulet panée croustillante, tranchée, servie avec frites et salade.",
+          "priceCents": 1200,
+          "photo": "photos/trio-poulet-frites-salade.jpg",
+          "tags": [
+            "fried"
+          ],
+          "allergens": [
+            "gluten",
+            "egg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soupes",
+      "name": "Soupes",
+      "items": [
+        {
+          "id": "lamen-miso-porc-hache",
+          "name": "Filet de porc haché au miso aux lamens",
+          "nameZh": "炸",
+          "description": "Lamens en bouillon miso, garnis de porc haché et légumes verts.",
+          "priceCents": 1200,
+          "photo": "photos/lamen-miso-porc-hache.jpg",
+          "tags": [
+            "noodles",
+            "soup"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-boeuf-epice",
+          "name": "Bœuf épicé aux lamens",
+          "nameZh": "辣",
+          "description": "Lamens en soupe, bœuf épicé, légumes verts, coriandre et ciboule.",
+          "priceCents": 1200,
+          "photo": "photos/lamen-boeuf-epice.jpg",
+          "tags": [
+            "noodles",
+            "soup",
+            "spicy"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-porc-epice",
+          "name": "Tranches de porc épicées aux lamens",
+          "nameZh": "水煮",
+          "description": "Soupe de lamens avec tranches de porc épicées dans un bouillon pimenté.",
+          "priceCents": 1350,
+          "photo": "photos/lamen-porc-epice.jpg",
+          "tags": [
+            "noodles",
+            "soup",
+            "spicy"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-poulet-croustillant",
+          "name": "Poulet croustillant aux lamens",
+          "nameZh": "炸鸡汤",
+          "description": "Lamens en bouillon, garnis de poulet croustillant, concombre, carotte, coriandre et sésame.",
+          "priceCents": 1350,
+          "photo": "photos/lamen-poulet-croustillant.jpg",
+          "tags": [
+            "noodles",
+            "soup"
+          ],
+          "allergens": [
+            "gluten",
+            "soy",
+            "sesame",
+            "egg"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-raviolis-crevettes",
+          "name": "Raviolis de crevettes aux lamens",
+          "nameZh": "虾吞面",
+          "description": "4 pièces de ravioli et lamens.",
+          "priceCents": 1230,
+          "photo": "photos/lamen-raviolis-crevettes.jpg",
+          "tags": [
+            "noodles",
+            "soup",
+            "dumplings"
+          ],
+          "allergens": [
+            "gluten",
+            "soy",
+            "shellfish"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-raviolis-porc",
+          "name": "Raviolis de porc aux lamens (4 pièces)",
+          "nameZh": "猪吞面",
+          "description": "4 pièces de ravioli et lamens.",
+          "priceCents": 1200,
+          "photo": "photos/lamen-raviolis-porc.jpg",
+          "tags": [
+            "noodles",
+            "soup",
+            "dumplings"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-legumes",
+          "name": "Légumes variés aux lamens",
+          "nameZh": "菜面",
+          "description": "Lamens en bouillon clair avec pak choï, germes de soja, carottes et coriandre.",
+          "priceCents": 1200,
+          "photo": "photos/lamen-legumes.jpg",
+          "tags": [
+            "noodles",
+            "soup",
+            "vegetarian"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "soupe-raviolis-crevettes",
+          "name": "Raviolis aux crevettes (8 pièces)",
+          "nameZh": "虾吞",
+          "description": "8 pièces.",
+          "priceCents": 1230,
+          "photo": "photos/soupe-raviolis-crevettes.jpg",
+          "tags": [
+            "soup",
+            "dumplings"
+          ],
+          "allergens": [
+            "gluten",
+            "soy",
+            "shellfish"
+          ]
+        },
+        {
+          "id": "lamen-chou-sale",
+          "name": "Chou salé aux lamens",
+          "nameZh": "咸菜",
+          "description": "Lamens en bouillon, garnis de chou salé, légumes verts, coriandre et ciboule.",
+          "priceCents": 1200,
+          "photo": "photos/lamen-chou-sale.jpg",
+          "tags": [
+            "noodles",
+            "soup"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-porc-seche",
+          "name": "Porc séché aux lamens",
+          "nameZh": "腊",
+          "description": "Soupe de lamens au porc séché, avec légumes verts et herbes.",
+          "priceCents": 1200,
+          "photo": "photos/lamen-porc-seche.jpg",
+          "tags": [
+            "noodles",
+            "soup"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-tranches-boeuf",
+          "name": "Tranches de bœuf aux lamens",
+          "nameZh": "牛",
+          "description": "Lamens dans bouillon clair, bœuf tranché, coriandre et légumes verts.",
+          "priceCents": 1200,
+          "photo": "photos/lamen-tranches-boeuf.jpg",
+          "tags": [
+            "noodles",
+            "soup"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "soupe-raviolis-porc",
+          "name": "Raviolis de porc (8 pièces)",
+          "nameZh": "猪吞",
+          "description": "8 pièces.",
+          "priceCents": 1200,
+          "photo": "photos/soupe-raviolis-porc.jpg",
+          "tags": [
+            "soup",
+            "dumplings"
+          ],
+          "allergens": [
+            "gluten",
+            "soy"
+          ]
+        },
+        {
+          "id": "lamen-crevettes",
+          "name": "Crevettes aux lamens",
+          "nameZh": "海",
+          "description": "Lamens en bouillon clair avec crevettes, légumes verts et coriandre.",
+          "priceCents": 1230,
+          "photo": "photos/lamen-crevettes.jpg",
+          "tags": [
+            "noodles",
+            "soup"
+          ],
+          "allergens": [
+            "gluten",
+            "soy",
+            "shellfish"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamen-crevettes-croustillantes",
+          "name": "Crevettes croustillantes aux lamens",
+          "nameZh": "酥虾汤",
+          "description": "Soupe de lamens au bouillon, garnie de crevettes croustillantes, pak-choï et coriandre.",
+          "priceCents": 1350,
+          "photo": "photos/lamen-crevettes-croustillantes.jpg",
+          "tags": [
+            "noodles",
+            "soup"
+          ],
+          "allergens": [
+            "gluten",
+            "soy",
+            "shellfish"
+          ],
+          "options": [
+            {
+              "id": "spice",
+              "name": "Spice level",
+              "choices": [
+                "mild",
+                "medium",
+                "hot"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "viandes",
+      "name": "Viandes",
+      "items": [
+        {
+          "id": "boeuf-oignons",
+          "name": "Bœuf aux oignons",
+          "nameZh": "洋牛",
+          "description": "Lamelles de bœuf et oignons en sauce.",
+          "priceCents": 1180,
+          "photo": "photos/boeuf-oignons.jpg",
+          "tags": [],
+          "allergens": [
+            "soy"
+          ]
+        },
+        {
+          "id": "poulet-imperial",
+          "name": "Poulet à l'impérial",
+          "nameZh": "宫保鸡丁",
+          "description": "Dés de poulet, poivrons et oignons en sauce.",
+          "priceCents": 1180,
+          "photo": "photos/poulet-imperial.jpg",
+          "tags": [],
+          "allergens": [
+            "soy",
+            "peanut"
+          ]
+        },
+        {
+          "id": "poulet-pimente",
+          "name": "Poulet pimenté",
+          "nameZh": "辣子鸡",
+          "description": "Morceaux de poulet pimentés avec piments rouges séchés et oignons verts.",
+          "priceCents": 1480,
+          "photo": "photos/poulet-pimente.jpg",
+          "tags": [
+            "spicy"
+          ],
+          "allergens": [
+            "soy"
+          ]
+        },
+        {
+          "id": "poulet-aigre-doux",
+          "name": "Poulet à la sauce aigre-douce",
+          "nameZh": "糖醋鸡",
+          "description": "Morceaux de poulet nappés de sauce aigre-douce avec dés d'ananas.",
+          "priceCents": 1160,
+          "photo": "photos/poulet-aigre-doux.jpg",
+          "tags": [],
+          "allergens": [
+            "gluten",
+            "soy"
+          ]
+        },
+        {
+          "id": "boeuf-champignons-noirs",
+          "name": "Bœuf aux champignons noirs",
+          "nameZh": "木耳牛",
+          "description": "Émincé de bœuf aux champignons noirs et oignons verts, en sauce.",
+          "priceCents": 1180,
+          "photo": "photos/boeuf-champignons-noirs.jpg",
+          "tags": [],
+          "allergens": [
+            "soy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "poissons-fruits-de-mer",
+      "name": "Poissons et fruits de mer",
+      "items": [
+        {
+          "id": "gambas-sel-poivre",
+          "name": "Gambas sel et poivre",
+          "nameZh": "椒盐虾",
+          "description": "Gambas sel et poivre à l'ail, piment et oignons verts.",
+          "priceCents": 1500,
+          "photo": "photos/gambas-sel-poivre.jpg",
+          "tags": [
+            "spicy"
+          ],
+          "allergens": [
+            "shellfish"
+          ]
+        },
+        {
+          "id": "crevettes-basilic",
+          "name": "Crevettes au basilic",
+          "nameZh": "泰式虾",
+          "description": "Crevettes au basilic, poivrons et oignons dans une sauce thaïe.",
+          "priceCents": 1350,
+          "photo": "photos/crevettes-basilic.jpg",
+          "tags": [],
+          "allergens": [
+            "shellfish",
+            "fish",
+            "soy"
+          ]
+        },
+        {
+          "id": "bar-vapeur",
+          "name": "Bar à la vapeur",
+          "nameZh": null,
+          "description": "Bar entier à la vapeur, sauce soja, garni de coriandre et oignons verts.",
+          "priceCents": 2100,
+          "photo": "photos/bar-vapeur.jpg",
+          "tags": [],
+          "allergens": [
+            "fish",
+            "soy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legumes",
+      "name": "Légumes",
+      "items": [
+        {
+          "id": "aubergine-parfumee",
+          "name": "Aubergine parfumée",
+          "nameZh": "茄子",
+          "description": "Aubergines en morceaux dans une sauce brune parfumée, parsemées d'oignons verts.",
+          "priceCents": 1000,
+          "photo": "photos/aubergine-parfumee.jpg",
+          "tags": [
+            "vegetarian"
+          ],
+          "allergens": [
+            "soy"
+          ]
+        },
+        {
+          "id": "tofu-mapo",
+          "name": "Tofu à la sauce mapo",
+          "nameZh": "麻豆",
+          "description": "Tofu en cubes, sauce mapo épicée, champignons noirs et oignons verts.",
+          "priceCents": 970,
+          "photo": "photos/tofu-mapo.jpg",
+          "tags": [
+            "spicy"
+          ],
+          "allergens": [
+            "soy"
+          ]
+        },
+        {
+          "id": "coeur-choux-ail",
+          "name": "Cœur de choux à l'ail",
+          "nameZh": "菜心",
+          "description": "Cœurs de chou chinois à l'ail, nappés d'une sauce légère.",
+          "priceCents": 1080,
+          "photo": "photos/coeur-choux-ail.jpg",
+          "tags": [
+            "vegetarian"
+          ],
+          "allergens": [
+            "soy"
+          ]
+        },
+        {
+          "id": "omelette-pousses-ail",
+          "name": "Omelette aux pousses d'ail",
+          "nameZh": "韭蛋",
+          "description": "Omelette d'œufs à la ciboulette chinoise (pousses d'ail).",
+          "priceCents": 970,
+          "photo": "photos/omelette-pousses-ail.jpg",
+          "tags": [
+            "vegetarian"
+          ],
+          "allergens": [
+            "egg"
+          ]
+        },
+        {
+          "id": "choux-shanghai-champignons",
+          "name": "Choux Shanghaï aux champignons parfumés",
+          "nameZh": "油菜",
+          "description": "Chou Shanghai avec champignons parfumés et lamelles de carotte, le tout nappé d'une sauce légère.",
+          "priceCents": 970,
+          "photo": "photos/choux-shanghai-champignons.jpg",
+          "tags": [
+            "vegetarian"
+          ],
+          "allergens": [
+            "soy"
+          ]
+        },
+        {
+          "id": "tofu-legumes",
+          "name": "Tofu aux légumes",
+          "nameZh": "红烧豆腐",
+          "description": "Tofu en morceaux dans une sauce brune avec pak choï, carottes, poivron vert et champignons.",
+          "priceCents": 1080,
+          "photo": "photos/tofu-legumes.jpg",
+          "tags": [
+            "vegetarian"
+          ],
+          "allergens": [
+            "soy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "accompagnements",
+      "name": "Accompagnements",
+      "items": [
+        {
+          "id": "riz-cantonais",
+          "name": "Riz cantonais",
+          "nameZh": "炒饭",
+          "description": "Riz sauté aux œufs et petits pois.",
+          "priceCents": 630,
+          "photo": "photos/riz-cantonais.jpg",
+          "tags": [
+            "rice"
+          ],
+          "allergens": [
+            "egg"
+          ]
+        },
+        {
+          "id": "riz-parfume",
+          "name": "Riz parfumé",
+          "nameZh": "白饭",
+          "description": "Portion individuelle de riz blanc parfumé, en accompagnement.",
+          "priceCents": 330,
+          "photo": "photos/riz-parfume.jpg",
+          "tags": [
+            "rice",
+            "vegetarian"
+          ],
+          "allergens": []
+        },
+        {
+          "id": "lamen-nature",
+          "name": "Lamen nature",
+          "nameZh": "白面",
+          "description": "Nouilles lamen nature, sans sauce ni garniture.",
+          "priceCents": 630,
+          "photo": "photos/lamen-nature.jpg",
+          "tags": [
+            "noodles",
+            "vegetarian"
+          ],
+          "allergens": [
+            "gluten"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts",
+      "items": [
+        {
+          "id": "perles-coco",
+          "name": "Perles de coco",
+          "nameZh": "糯米糍",
+          "description": "Boules de riz gluant moelleuses enrobées de noix de coco râpée.",
+          "priceCents": 430,
+          "photo": "photos/perles-coco.jpg",
+          "tags": [
+            "dessert"
+          ],
+          "allergens": []
+        },
+        {
+          "id": "lychee-sirop",
+          "name": "Lychée au sirop",
+          "nameZh": null,
+          "description": "Litchis au sirop en coupe.",
+          "priceCents": 430,
+          "photo": "photos/lychee-sirop.jpg",
+          "tags": [
+            "dessert"
+          ],
+          "allergens": []
+        }
+      ]
+    },
+    {
+      "id": "boissons",
+      "name": "Boissons",
+      "items": [
+        {
+          "id": "coca-cola-33",
+          "name": "Coca cola 33cl",
+          "nameZh": null,
+          "description": null,
+          "priceCents": 300,
+          "photo": "photos/coca-cola-33.jpg",
+          "tags": [
+            "drink"
+          ],
+          "allergens": []
+        },
+        {
+          "id": "san-pellegrino-50",
+          "name": "San Pellegrino 50cl",
+          "nameZh": null,
+          "description": null,
+          "priceCents": 350,
+          "photo": "photos/san-pellegrino-50.jpg",
+          "tags": [
+            "drink"
+          ],
+          "allergens": []
+        },
+        {
+          "id": "orangina-33",
+          "name": "Orangina 33cl",
+          "nameZh": null,
+          "description": null,
+          "priceCents": 300,
+          "photo": "photos/orangina-33.jpg",
+          "tags": [
+            "drink"
+          ],
+          "allergens": []
+        },
+        {
+          "id": "oasis-tropical-33",
+          "name": "Oasis Tropical 33cl",
+          "nameZh": null,
+          "description": null,
+          "priceCents": 300,
+          "photo": "photos/oasis-tropical-33.jpg",
+          "tags": [
+            "drink"
+          ],
+          "allergens": []
+        },
+        {
+          "id": "evian-50",
+          "name": "Evian 50cl",
+          "nameZh": null,
+          "description": null,
+          "priceCents": 300,
+          "photo": "photos/evian-50.jpg",
+          "tags": [
+            "drink"
+          ],
+          "allergens": []
+        },
+        {
+          "id": "ice-tea-peche-33",
+          "name": "Ice tea pêche 33cl",
+          "nameZh": null,
+          "description": null,
+          "priceCents": 300,
+          "photo": null,
+          "tags": [
+            "drink"
+          ],
+          "allergens": []
+        },
+        {
+          "id": "wonglokat-33",
+          "name": "Wonglokat (thé herbal chinois sucré) 33cl",
+          "nameZh": null,
+          "description": null,
+          "priceCents": 300,
+          "photo": null,
+          "tags": [
+            "drink"
+          ],
+          "allergens": []
+        },
+        {
+          "id": "jus-mangue-25",
+          "name": "Jus de mangue 25cl",
+          "nameZh": null,
+          "description": "Boisson non alcoolisée à la mangue, 25 cl.",
+          "priceCents": 300,
+          "photo": null,
+          "tags": [
+            "drink"
+          ],
+          "allergens": []
+        },
+        {
+          "id": "jus-lychee-25",
+          "name": "Jus de lychee 25cl",
+          "nameZh": null,
+          "description": "Jus de litchi, portion 25 cl.",
+          "priceCents": 300,
+          "photo": null,
+          "tags": [
+            "drink"
+          ],
+          "allergens": []
+        },
+        {
+          "id": "boisson-coco-33",
+          "name": "Boisson de coco 33cl",
+          "nameZh": null,
+          "description": null,
+          "priceCents": 300,
+          "photo": null,
+          "tags": [
+            "drink"
+          ],
+          "allergens": []
+        },
+        {
+          "id": "boisson-soja-25",
+          "name": "Boisson de soja 25cl",
+          "nameZh": null,
+          "description": "Boisson végétale à base de soja, 25 cl.",
+          "priceCents": 300,
+          "photo": null,
+          "tags": [
+            "drink"
+          ],
+          "allergens": [
+            "soy"
+          ]
+        }
+      ]
+    }
+  ]
+}

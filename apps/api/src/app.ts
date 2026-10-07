@@ -1,8 +1,10 @@
 import express from 'express';
-import type { Request } from 'express';
+import type { NextFunction, Request, Response } from 'express';
 import { ISSUE_TYPES, ISSUE_SEVERITIES, ISSUE_STATUSES } from './types.js';
 import type { Issue, IssueType, IssueSeverity, IssueStatus } from './types.js';
-import { SEED_ISSUES, KNOWN_PROJECT_IDS } from './seed.js';
+import { KNOWN_PROJECT_IDS } from './seed.js';
+import { IssueStore } from './store.js';
+import { validateIssueUpdate, validateNewIssue } from './validation.js';
 
 interface ErrorBody {
   code: string;
@@ -16,25 +18,40 @@ function toArray(value: unknown): string[] {
   return [String(value)];
 }
 
-function notImplemented(_req: Request, res: express.Response) {
-  const body: ErrorBody = {
-    code: 'NOT_IMPLEMENTED',
-    message: 'Write operations are specified in contracts/openapi.yaml but not implemented by the stub server.',
-  };
-  res.status(501).json(body);
+function sendError(res: Response, status: number, body: ErrorBody): void {
+  res.status(status).json(body);
 }
 
-export function createApp(): express.Express {
+function isKnownProject(projectId: string): boolean {
+  return (KNOWN_PROJECT_IDS as readonly string[]).includes(projectId);
+}
+
+function sendProjectNotFound(res: Response, projectId: string): void {
+  sendError(res, 404, { code: 'PROJECT_NOT_FOUND', message: `Unknown project '${projectId}'.` });
+}
+
+function sendIssueNotFound(res: Response, projectId: string, issueId: string): void {
+  sendError(res, 404, {
+    code: 'ISSUE_NOT_FOUND',
+    message: `Unknown issue '${issueId}' in project '${projectId}'.`,
+  });
+}
+
+function sendInvalidBody(res: Response, details: string[]): void {
+  sendError(res, 400, { code: 'INVALID_BODY', message: 'Invalid request body.', details });
+}
+
+/**
+ * Builds the Express app. Each call gets its own in-memory store initialised
+ * from the seed, so writes are visible to subsequent reads on the same app.
+ */
+export function createApp(store: IssueStore = new IssueStore()): express.Express {
   const app = express();
   app.use(express.json());
 
   app.get('/issues/:projectId', (req, res) => {
     const { projectId } = req.params;
-    if (!KNOWN_PROJECT_IDS.includes(projectId as (typeof KNOWN_PROJECT_IDS)[number])) {
-      const body: ErrorBody = { code: 'PROJECT_NOT_FOUND', message: `Unknown project '${projectId}'.` };
-      res.status(404).json(body);
-      return;
-    }
+    if (!isKnownProject(projectId)) return sendProjectNotFound(res, projectId);
 
     const typeValues = toArray(req.query.type);
     const severityValues = toArray(req.query.severity);
@@ -52,12 +69,10 @@ export function createApp(): express.Express {
       if (!ISSUE_STATUSES.includes(v as IssueStatus)) details.push(`status: '${v}' is not a valid IssueStatus`);
     }
     if (details.length > 0) {
-      const body: ErrorBody = { code: 'INVALID_QUERY', message: 'Invalid query parameter value.', details };
-      res.status(400).json(body);
-      return;
+      return sendError(res, 400, { code: 'INVALID_QUERY', message: 'Invalid query parameter value.', details });
     }
 
-    let results: Issue[] = SEED_ISSUES.filter((issue) => issue.projectId === projectId);
+    let results: Issue[] = store.list(projectId);
     if (fileValue !== undefined) {
       results = results.filter((issue) => issue.filePath === fileValue);
     }
@@ -74,32 +89,70 @@ export function createApp(): express.Express {
     res.status(200).json(results);
   });
 
+  app.post('/issues/:projectId', (req, res) => {
+    const { projectId } = req.params;
+    if (!isKnownProject(projectId)) return sendProjectNotFound(res, projectId);
+
+    const result = validateNewIssue(req.body);
+    if (!result.ok) return sendInvalidBody(res, result.details);
+
+    const now = new Date().toISOString();
+    const issue: Issue = { id: store.newId(), projectId, ...result.value, createdAt: now, updatedAt: now };
+    store.add(issue);
+    res
+      .status(201)
+      .location(`/issues/${encodeURIComponent(projectId)}/${encodeURIComponent(issue.id)}`)
+      .json(issue);
+  });
+
   app.get('/issues/:projectId/:issueId', (req, res) => {
     const { projectId, issueId } = req.params;
-    if (!KNOWN_PROJECT_IDS.includes(projectId as (typeof KNOWN_PROJECT_IDS)[number])) {
-      const body: ErrorBody = { code: 'PROJECT_NOT_FOUND', message: `Unknown project '${projectId}'.` };
-      res.status(404).json(body);
-      return;
-    }
-    const issue = SEED_ISSUES.find((i) => i.projectId === projectId && i.id === issueId);
-    if (!issue) {
-      const body: ErrorBody = {
-        code: 'ISSUE_NOT_FOUND',
-        message: `Unknown issue '${issueId}' in project '${projectId}'.`,
-      };
-      res.status(404).json(body);
-      return;
-    }
+    if (!isKnownProject(projectId)) return sendProjectNotFound(res, projectId);
+    const issue = store.get(projectId, issueId);
+    if (!issue) return sendIssueNotFound(res, projectId, issueId);
     res.status(200).json(issue);
   });
 
-  app.post('/issues/:projectId', notImplemented);
-  app.put('/issues/:projectId/:issueId', notImplemented);
-  app.delete('/issues/:projectId/:issueId', notImplemented);
+  app.put('/issues/:projectId/:issueId', (req, res) => {
+    const { projectId, issueId } = req.params;
+    if (!isKnownProject(projectId)) return sendProjectNotFound(res, projectId);
+    const current = store.get(projectId, issueId);
+    if (!current) return sendIssueNotFound(res, projectId, issueId);
+
+    const result = validateIssueUpdate(req.body, current);
+    if (!result.ok) return sendInvalidBody(res, result.details);
+
+    let updatedAt = new Date().toISOString();
+    // Guarantee updatedAt visibly changes even for two updates in the same millisecond.
+    if (updatedAt <= current.updatedAt) updatedAt = new Date(Date.parse(current.updatedAt) + 1).toISOString();
+
+    const updated: Issue = { ...current, ...result.value, updatedAt };
+    store.replace(updated);
+    res.status(200).json(updated);
+  });
+
+  app.delete('/issues/:projectId/:issueId', (req, res) => {
+    const { projectId, issueId } = req.params;
+    if (!isKnownProject(projectId)) return sendProjectNotFound(res, projectId);
+    if (!store.remove(projectId, issueId)) return sendIssueNotFound(res, projectId, issueId);
+    res.status(204).end();
+  });
 
   app.use((_req, res) => {
-    const body: ErrorBody = { code: 'ISSUE_NOT_FOUND', message: 'No such route.' };
-    res.status(404).json(body);
+    sendError(res, 404, { code: 'ISSUE_NOT_FOUND', message: 'No such route.' });
+  });
+
+  // Malformed JSON bodies (and other body-parser failures) become contract-shaped errors.
+  app.use((err: unknown, _req: Request, res: Response, next: NextFunction) => {
+    const status = (err as { status?: number })?.status;
+    const type = (err as { type?: string })?.type;
+    if (type === 'entity.parse.failed') {
+      return sendInvalidBody(res, ['body: is not valid JSON']);
+    }
+    if (status !== undefined && status >= 400 && status < 500) {
+      return sendError(res, status, { code: 'INVALID_BODY', message: (err as Error).message ?? 'Invalid request body.' });
+    }
+    next(err);
   });
 
   return app;

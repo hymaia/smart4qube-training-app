@@ -11,7 +11,8 @@ export class HttpIssuesRepository implements IIssuesRepository {
   constructor(private readonly baseUrl: string = '') {}
 
   async listByProject(projectId: string): Promise<Issue[]> {
-    const res = await fetch(`${this.baseUrl}/issues/${encodeURIComponent(projectId)}`);
+    // no-store: issues are written by other clients (scripts, reviewer agents), never serve a cached list.
+    const res = await fetch(`${this.baseUrl}/issues/${encodeURIComponent(projectId)}`, { cache: 'no-store' });
     if (!res.ok) {
       let message = `Request failed with status ${res.status}`;
       try {

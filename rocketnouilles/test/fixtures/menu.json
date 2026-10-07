@@ -1,0 +1,84 @@
+{
+  "restaurant": {
+    "name": "Test Nouilles",
+    "address": "1 Rue du Test, 75003 Paris",
+    "phone": "+33 1 00 00 00 00",
+    "website": null,
+    "sources": ["fixture"],
+    "retrievedAt": "2026-10-07",
+    "photo": null
+  },
+  "currency": "EUR",
+  "categories": [
+    {
+      "id": "entrees",
+      "name": "Entrées",
+      "items": [
+        {
+          "id": "raviolis-grilles",
+          "name": "Raviolis grillés",
+          "nameZh": "锅贴",
+          "description": "Raviolis grillés à la poêle.",
+          "priceCents": 660,
+          "photo": "photos/raviolis-grilles.jpg",
+          "tags": ["dumplings"],
+          "allergens": ["gluten", "soy"]
+        },
+        {
+          "id": "nems-porc",
+          "name": "Nêms au porc",
+          "description": null,
+          "priceCents": 700,
+          "photo": null,
+          "tags": ["fried"],
+          "allergens": ["gluten"]
+        }
+      ]
+    },
+    {
+      "id": "soupes",
+      "name": "Soupes",
+      "items": [
+        {
+          "id": "lamen-boeuf",
+          "name": "Tranches de bœuf aux lamens",
+          "nameZh": "牛",
+          "description": "Soupe de lamens au bœuf.",
+          "priceCents": 1200,
+          "photo": "photos/lamen-boeuf.jpg",
+          "tags": ["noodles", "soup"],
+          "allergens": ["gluten", "soy"],
+          "options": [{ "id": "spice", "name": "Spice level", "choices": ["mild", "medium", "hot"] }]
+        },
+        {
+          "id": "lamen-legumes",
+          "name": "Légumes variés aux lamens",
+          "nameZh": null,
+          "description": "Soupe de lamens aux légumes.",
+          "priceCents": 1000,
+          "photo": null,
+          "tags": ["noodles", "soup", "vegetarian"],
+          "allergens": ["gluten"],
+          "options": [{ "id": "spice", "name": "Spice level", "choices": ["mild", "medium", "hot"] }]
+        }
+      ]
+    },
+    {
+      "id": "boissons",
+      "name": "Boissons",
+      "items": [
+        {
+          "id": "the-jasmin",
+          "name": "Thé au jasmin",
+          "description": "",
+          "priceCents": 300,
+          "photo": null,
+          "tags": ["drink"],
+          "allergens": [],
+          "priceEstimated": true
+        }
+      ]
+    }
+  ],
+  "allergensDisclaimer": "Fixture data."
+}

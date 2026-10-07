@@ -1,6 +1,8 @@
 import type { Issue } from './types.js';
 
-export const KNOWN_PROJECT_IDS = ['acme-payments', 'legacy-billing'] as const;
+// rocketnouilles is the standalone app at the repo root (rocketnouilles/);
+// it starts with no seeded issues — findings are created through the API.
+export const KNOWN_PROJECT_IDS = ['acme-payments', 'legacy-billing', 'rocketnouilles'] as const;
 
 const T = '2026-08-14T09:12:00.000Z';
 

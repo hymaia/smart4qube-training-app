@@ -11,6 +11,7 @@
     "test:api": "npm run test --workspace=apps/api",
     "test:web": "npm run test --workspace=apps/web",
     "test": "npm run test:api && npm run test:web",
+    "contract:check": "node .claude/skills/issue-contract-checker/scripts/check-contract.mjs",
     "issues:list": "bash scripts/list-issues.sh",
     "issues:add": "bash scripts/add-issue.sh",
     "issues:remove": "bash scripts/remove-issue.sh"
