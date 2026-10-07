@@ -1,0 +1,81 @@
+[
+  {
+    "id": "aligned",
+    "description": "Start state, nothing changed: all three enums aligned.",
+    "prompt": "Before I start on the status filter: are the issue enums in sync between the OpenAPI contract, the API and the web app?",
+    "shouldActivate": true,
+    "askVerdict": true,
+    "mutations": [],
+    "checkerExit": 0,
+    "expect": {
+      "kind": "contract",
+      "aligned": true,
+      "drift": []
+    }
+  },
+  {
+    "id": "web-status-drift",
+    "description": "Web domain model renames status RESOLVED to CLOSED.",
+    "prompt": "A teammate touched the web Issue model yesterday. Is the issue contract still in sync?",
+    "shouldActivate": true,
+    "askVerdict": true,
+    "mutations": [
+      {
+        "file": "apps/web/src/domain/entities/Issue.ts",
+        "find": "'RESOLVED'",
+        "replace": "'CLOSED'"
+      }
+    ],
+    "checkerExit": 1,
+    "expect": null
+  },
+  {
+    "id": "contract-missing-type",
+    "description": "COMMENT removed from the IssueType enum of the contract only.",
+    "prompt": "I'm reviewing a PR that edits contracts/openapi.yaml. Check for contract drift on the issue model.",
+    "shouldActivate": true,
+    "askVerdict": true,
+    "mutations": [
+      {
+        "file": "contracts/openapi.yaml",
+        "find": "enum: [VULNERABILITY, QUALITY_GATE_VIOLATION, COMMENT]",
+        "replace": "enum: [VULNERABILITY, QUALITY_GATE_VIOLATION]"
+      }
+    ],
+    "checkerExit": 1,
+    "expect": null
+  },
+  {
+    "id": "api-severity-renamed",
+    "description": "API renames severity MAJOR to HIGH (union type and ISSUE_SEVERITIES).",
+    "prompt": "Check the enums: does the API still use exactly the issue types, severities and statuses that the contract defines?",
+    "shouldActivate": true,
+    "askVerdict": true,
+    "mutations": [
+      {
+        "file": "apps/api/src/types.ts",
+        "find": "'MAJOR'",
+        "replace": "'HIGH'"
+      }
+    ],
+    "checkerExit": 1,
+    "expect": null
+  },
+  {
+    "id": "unrelated-projects",
+    "description": "Issue-adjacent question that has nothing to do with enum drift: the skill must not activate.",
+    "prompt": "Which project ids does the Smart4Qube API accept? Just list them.",
+    "shouldActivate": false,
+    "askVerdict": false,
+    "mutations": [],
+    "checkerExit": 0,
+    "expect": {
+      "kind": "unrelated",
+      "mustMention": [
+        "acme-payments",
+        "legacy-billing",
+        "rocketnouilles"
+      ]
+    }
+  }
+]

@@ -43,6 +43,11 @@ npm run issues:list -- rocketnouilles "status=OPEN"
 npm run issues:remove -- rocketnouilles iss-020
 ```
 
+## Exercises
+
+Starter files for the advanced exercises are in [`exercises/`](exercises/README.md), one folder per
+exercise. The instructions are on the slides.
+
 ## Contract check
 
 ```

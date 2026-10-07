@@ -1,0 +1,22 @@
+{
+  "name": "smart4qube-agent-reviewer",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "review": "tsx src/reviewer.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test src/reviewer.test.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.292",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}

@@ -3,3 +3,7 @@ dist/
 .DS_Store
 *.log
 coverage/
+
+# Exercise outputs (node_modules/ above also covers exercises/*/node_modules)
+exercises/**/results/
+exercises/**/summary.json
